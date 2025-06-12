@@ -1,21 +1,22 @@
-﻿using ControleDeBar.Dominio.ModuloMesa;
+﻿using ControleDeBar.Dominio.ModuloGarcom;
+using ControleDeBar.Dominio.ModuloMesa;
 using ControleDeBar.WebApp.Models;
 
 namespace ControleDeBar.WebApp.Extensions;
 
-public static class MesaExtensions
+public static class GarcomExtensions
 {
-    public static Mesa ParaEntidade(this FormularioMesaViewModel formularioVM)
+    public static Garcom ParaEntidade(this FormularioGarcomViewModel formularioVM)
     {
-        return new Mesa(formularioVM.Numero, formularioVM.Capacidade);
+        return new Garcom(formularioVM.Nome, formularioVM.Cpf);
     }
 
-    public static DetalhesMesaViewModel ParaDetalhesVM(this Mesa mesa)
+    public static DetalhesGarcomViewModel ParaDetalhesVM(this Garcom garcom)
     {
-        return new DetalhesMesaViewModel(
-                mesa.Id,
-                mesa.Numero,
-                mesa.Capacidade
+        return new DetalhesGarcomViewModel(
+                garcom.Id,
+                garcom.Nome,
+                garcom.Cpf
         );
     }
 }
