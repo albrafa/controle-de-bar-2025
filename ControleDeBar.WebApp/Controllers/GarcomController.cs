@@ -14,6 +14,7 @@ public class GarcomController : Controller
 {
     private readonly ContextoDados contextoDados;
     private readonly IRepositorioGarcom repositorioGarcom;
+    
 
     public GarcomController()
     {
@@ -101,8 +102,10 @@ public class GarcomController : Controller
             id,
             registroSelecionado.Cpf,
             registroSelecionado.Nome
+
         );
 
-        return View(detalhesVM);
-    }
+        return View(detalhesVM);        
+
+    }    
 }
